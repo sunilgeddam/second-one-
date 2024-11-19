@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkHorse</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+/* General reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+}
+
+.navbar .logo a img {
+    width: 150px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar .cta-button {
+    padding: 10px 20px;
+    background-color: #ff9900;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Section Styling */
+.services-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Service Section Styling */
+.service {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Alter the layout for alternating sections */
+.service:nth-child(odd) {
+    flex-direction: column-reverse; /* For odd sections, image will be at the top, text at the bottom */
+}
+
+.service:nth-child(even) {
+    flex-direction: column; /* For even sections, image will be at the top, text at the bottom */
+}
+
+.service:hover {
+    transform: scale(1.05);
+}
+
+.service-image {
+    width: 100%;
+    max-height: 250px;
+    overflow: hidden; /* Ensure image doesn't overflow its container */
+    margin-bottom: 20px; /* Add space below the image */
+}
+
+.service-image img {
+    width: 100%;
+    height: auto; /* Let the height adjust while maintaining aspect ratio */
+    object-fit: cover; /* Ensure the image covers the area without distorting */
+    border-radius: 8px;
+}
+
+.service-content {
+    width: 100%;
+    text-align: center; /* Center-align text */
+}
+
+.service-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.service-content p {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.service-content ul {
+    list-style-type: none;
+}
+
+.service-content ul li {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+/* Industries Section */
+.industries {
+    margin-top: 40px;
+    padding: 40px 0;
+    background-color: #e9ecef;
+}
+
+.industry-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.industry-card {
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 8px;
+    flex-basis: 30%;
+    min-height: 250px;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+}
+
+.industry-card:hover {
+    transform: scale(1.05);
+}
+
+.industry-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.industry-card p {
+    font-size: 1em;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.footer-links, .footer-contact, .footer-social {
+    width: 25%;
+    padding: 10px;
+}
+
+.footer-links h4, .footer-contact h4, .footer-social h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-links ul, .footer-social ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li, .footer-social ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a, .footer-social ul li a {
+    color: #f8f8f8;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover, .footer-social ul li a:hover {
+    color: #ff5722;
+}
+
+.footer-contact p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.footer-contact a {
+    color: #f8f8f8;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    color: #ff5722;
+}
+
+.footer-social ul li a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-social ul li a img:hover {
+    opacity: 0.8;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+}
+.footer .footer-social ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.footer .footer-social ul li {
+    display: inline-block;
+}
+
+.footer .footer-social ul li a {
+    text-decoration: none;
+}
+
+.footer .footer-social .social-icon {
+    width: 30px;
+    height: 30px;
+}
+
+
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo, .footer-links, .footer-contact, .footer-social {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-social ul {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .footer-social ul li a img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+        padding-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-links ul li a, .footer-social ul li a {
+        font-size: 0.9rem;
+    }
+
+    .footer-logo img {
+        max-width: 120px;
+    }
+
+    .footer-social ul li a img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .navbar .cta-button {
+        margin-top: 20px;
+    }
+
+    /* Service Section */
+    .service {
+        flex-direction: column; /* Stack the image and text on mobile */
+    }
+
+    .service-image {
+        width: 100%; /* Make image take full width */
+        max-height: 200px; /* Reduce height for mobile */
+        margin-bottom: 20px; /* Add space between image and text */
+    }
+
+    .service-content {
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .service-content h3 {
+        font-size: 1.4em;
+    }
+
+    .service-content p {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .service-image img {
+        object-fit: cover; /* Make image cover the available area */
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Industries Section */
+    .industry-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .industry-card {
+        flex-basis: 100%;
+        min-height: 200px;
+        text-align: center;
+    }
+
+    .industry-card h3 {
+        font-size: 1.5em;
+    }
+
+    .industry-card p {
+        font-size: 1em;
+    }
+
+    /* Footer */
+    .footer .footer-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-links, .footer-contact, .footer-social {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer .footer-social ul {
+        justify-content: center;
+    }
+
+    .footer .social-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .footer-bottom {
+        font-size: 0.9em;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/Work-Horse.png" alt="Logo"> 
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+        
+        <a href="contactus.html" class="cta-button">Get Started</a>
+    </nav>
+
+    <section class="services-section">
+        <div class="container">
+            <h2>Our Services</h2>
+
+            <div class="service staffing-solutions">
+                <div class="service-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8jk95rH5AXSMLN_RJHVEMD9mZ21p3jGvIyQ&s" alt="Staffing Solutions">
+                </div>
+                <div class="service-content">
+                    <h3>Staffing Solutions</h3>
+                    <p>We offer a wide range of staffing solutions to meet your business needs. Our services include:</p>
+                    <ul>
+                        <li><strong>Contract Staffing:</strong> Temporary staffing for project-based needs.</li>
+                        <li><strong>Permanent Placement:</strong> Helping you find long-term employees who align with your company culture.</li>
+                        <li><strong>Executive Search:</strong> Specialized recruitment for top-level leadership positions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service consulting-services">
+                <div class="service-image">
+                    <img src="https://penncomp.com/wp-content/uploads/2022/08/35251012_businessman-and-abstract-infographics-in-augmented-reality.jpg" alt="Consulting Services">
+                </div>
+                <div class="service-content">
+                    <h3>Consulting Services</h3>
+                    <p>Our consultants help you improve your business performance, focusing on:</p>
+                    <ul>
+                        <li><strong>HR Consulting:</strong> Tailored HR solutions for better employee engagement and performance.</li>
+                        <li><strong>Workforce Strategy:</strong> Developing a workforce plan that supports your business goals.</li>
+                        <li><strong>Process Improvement:</strong> Streamlining your processes for better efficiency and productivity.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <section class="industries">
+                <div class="container">
+                    <h2>Industries We Serve</h2>
+                    <p>We specialize in providing tailored staffing solutions to various industries. Here’s a look at some of the key sectors where we make a significant impact.</p>
+                    <div class="industry-cards">
+                        <div class="industry-card" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK6ZEpUCas4QqhK9DiLhlJXxayezqqxKuYTrLG0UacRyN84IY4EJ4nR9ZFp1PRWplhKNU&usqp=CAU');">
+                            <div class="industry-card-content">
+                                <h3>Healthcare</h3>
+                                <p>Connecting healthcare professionals with organizations to improve patient care and operations.</p>
+                            </div>
+                        </div>
+            
+                        <div class="industry-card" style="background-image: url('https://bsmedia.business-standard.com/_media/bs/img/article/2024-07/07/full/1720369883-1424.jpg?im=FeatureCrop,size=(826,465)');">
+                            <div class="industry-card-content">
+                                <h3>IT & Tech</h3>
+                                <p>Specialized tech staffing for software development, IT infrastructure, and cybersecurity.</p>
+                            </div>
+                        </div>
+            
+                        <div class="industry-card" style="background-image: url('https://media.istockphoto.com/id/543558426/photo/financial-data-on-a-monitor-stock-market-data.jpg?s=1024x1024&w=is&k=20&c=ZTlJuVdQO36GLvP4tFWcuRXP8RjBQjey3dM2WPpWHWg=');">
+                            <div class="industry-card-content">
+                                <h3>Finance</h3>
+                                <p>Providing financial experts for accounting, investment, and analysis roles in the finance sector.</p>
+                            </div>
+                        </div>
+            
+                            <!-- <div class="industry-card" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhqRdAV_8-3JmWe6OMRBKAiCwG85-lafmWMg&s');">
+                                <div class="industry-card-content">
+                                    <h3>Education</h3>
+                                    <p>Staffing solutions for schools, universities, and training institutes to find the right educators.</p>
+                                </div>
+                            </div>
+                        </div> -->
+                </div>
+            </section>
+                       
+            <div class="service why-choose-us">
+                <div class="service-image">
+                    <img src="https://media.istockphoto.com/id/1562494036/photo/document-digitization-digital-display-organization-data.jpg?s=612x612&w=0&k=20&c=D4x6Oq8312KLLwvETR2FB3JyHPrJIWLuRgHSZp_hYFc=" alt="Why Choose Us">
+                </div>
+                <div class="service-content">
+                    <h3>Why Choose Us?</h3>
+                    <p>Here’s why you should choose us as your trusted partner:</p>
+                    <ul>
+                        <li><strong>Industry Expertise:</strong> We have deep knowledge in the industries we serve.</li>
+                        <li><strong>Vast Network:</strong> Access to a wide network of skilled professionals and executives.</li>
+                        <li><strong>Dedicated Team:</strong> Our team works tirelessly to meet your unique business needs.</li>
+                        <li><strong>Personalized Service:</strong> We offer customized solutions that cater to your specific requirements.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                
+                <div class="footer-logo">
+                    <a href="index.html"><img src="images/Work-Horse.png" alt="WorkHorse Logo" class="footer-logo-img"></a>
+                </div>
+    
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <!-- <li><a href="#industries">Industries</a></li> -->
+                    <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+    
+               
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>1234 Street Name, City, State, 56789</p>
+                    <p>Phone: +1 234 567 8901</p>
+                    <p>Email: <a href="mailto:info@workhorse.com">info@workhorse.com</a></p>
+                </div>
+    
+              
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAgVBMVEUAAAAQcP8IZf8IZ/8JZv8HZf8IZv8IZv8IaP8JZ/8HZv8IZv8FZf8YcP9FjP+TvP/g7P/////R4/9Vlf8QYP+Es/9kn/8IZv8nef8JZf8AYP/v9f/Q4v/B2P9GjP8HZv+yz//Q4/83g/8HZv/g6/+Dsv8HZf/n7//////////e6//ZLyHjAAAAK3RSTlMAEGCfz+//XyCQj98w/////////xD//6D/kBD/////7////8///5Cgz+/vONkvXQAAAPJJREFUeAF9kkUCwzAMBGVSGMrM3P//rxBaB+e6s0YREFJpw2y0cgS1cT3DQLmNWPjcwK/XA24RWIuEdg4j7OtHUX0NYedxko5+jCeZMc0En8FsVDDHSd1WDoFdIlogX46awopozWA+ythsd7s9ZxymJBkcs3wcMZC0YHDKhDNbKLowuGYC21zINIWUbQ7EwwJT7YogqgTTKaTY4tIp7HDIRadwwzVlKVyv11HG9cekFBxam8FbTInuQ4LCd3cL2Uzd+4UV/VkHfUIgMLRdQuBi7JsCxh5rQEAfrO9NYSWojruwBOOhDoR8PF+j0fuipNX+AmbCIviMIiwCAAAAAElFTkSuQmCC" alt="Facebook" class="social-icon"></a></li>
+                        <li><a href="#" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" alt="LinkedIn" class="social-icon"></a></li>
+                        <li><a href="#" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAA/0lEQVR4AbXPIazCMACE4d+L2qoZFEGSIGcRc/gJJB5XMzGJmK9EN0HMi+qaibkKVF1txdQe4g0YzPK5yyWXHL9TaPNQ89LojH87N1rbJcXkMF4Fk31UMrf34hm14KUeoQxGArALHTMuQD2cAWQfJXOpgTbksGr9ng8qluShJTPhyCdx63POg7rEim95ZyR68I1ggQpnCEGwyPicw6hZtPEGmnhkycqOio1zm6XuFtyw5XDXfGvuau0dXHzJp8pfBPuhIXO9ZK5ILUCdSvLYMpc6ASBtl3EaC97I4KaFaOCaBE9Zn5jUsVqR2vcTJZO1DdbGoZryVp94Ka/mQfE7f2T3df0WBhLDAAAAAElFTkSuQmCC" alt="Twitter" class="social-icon"></a></li>
+                        <li><a href="#" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAABWVBMVEVyHVFHcEx0Fvp8Fv1yFP1/FfyLCOyfBOmtAeS7AuDHAd3UANjZAs7rD6xyFvzjANTqAMHoA7l2F/yPFfx8GPmfD/zFF/XVWujoZuLyZt3pRt/yGdHyA8j1AKTViPj/9Pr////8g9f9A7r3DZz5vO794Pf+ruj9B6uzFPv7JLv+AJr+BI/+YMP/1vD+AIThG+n9GZn/vd3/YZz+AXP+GoT/r8r+AmT/b5z+HHH+I3f+G2P/ur7+FFD+Klb+fYv/wcr+LUf+LWX+AFn+Nzr+Ohz+RT7+inP+Si7/ztD+TxL/zbv+Wy//9fH+WgL+c1X+ZyX+PUv+Bzv+VXD+cxr/6eL+aQT+eAX+nDj+gwD+gxH+fSL+rYn+jwD+iwL+XhX/3rn/1bH9ZR/+lwP+nwH+xHH8ZC3+qAH+sAD+wAP+x1P+zGb+pl79mQn+uAD9J3T+ygD9O1n8pRL9twuaEkMNAAAAc3RSTlMBAF3G///////////GW9j//9nY/1r///////////7//////8b/////////////////////////////////////////////////////////////////////////////////xf///1v////////Y/9j/2VzGSus+GgAAAeNJREFUeAFFjEWiU0EQRc/tqu74V9wZ4TBiB6wG3wpzVoQ7zHCXeELypHH+KVchJAESaEs0IUv0Zv+7fwLgSAOk9ZFghcnfDw4AAg18cyhWCKNVob9NCZjQLWVrEGhJbJGDoCBpMwCrJTETAKBWgdeRGb4dmJW56PdI/KU1K4X15N+AFsW0+3/WVm7Pa0Pmu4Fh7HcbRIjMIhr3FItUGAH4SNZKjK32YjKpK3Iv0yUY0b8g0Vs0oK+8wbeyMBAQwVeo44R1z7XWq6rqpn5jiTmAeQO3iceg9zkYzKvc71iEmMFbqCJJ4tDcKFrLjX5D/MEdq8GpIUUgd/tgGboTgiUDPDZ44SXNpr0gWRcAgqEmEPJRNVPOxYaOth0oAHdCxWoOzslH+RCvlafYMgFUHvAIHoCjz16io80BrH/j0AAcJ9KWKkhn5sRyGjsDtr/sqyrsWNO1cW9/cDNLZgHLSzVvn+wMq9qbKKwy7TiIaKTW56pzW6Oa+N1OKEQdvvl2RyOE4DEOZurd1cHNeab27tyjOPfhFlucXP04ovF97B6jTOzdJwFLaNAff7N6c8incH1VpiSR67q2VgjzUU7JgbMTiQtFKmgAsCAuczlflmVZn7iGBFc1awB/p4tqUS3LDb8OPwBrSrZIO/KHZwAAAABJRU5ErkJggg==" alt="Instagram" class="social-icon"></a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 WorkHorse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+    </body>
+</html>

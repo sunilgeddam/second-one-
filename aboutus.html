@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkHorse</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    color: #333;
+}
+
+p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2C3E50;  
+    padding: 15px 30px;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar .logo img {
+    max-height: 50px;
+    width: auto;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+   
+    
+}
+
+.navbar .nav-links li {
+    display: inline;
+    
+}
+
+.navbar .nav-links a {
+    color: #ECF0F1; 
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+    position: relative;left: 20px;
+}
+
+.navbar .nav-links a:hover {
+    color: #E67E22; 
+}
+
+.cta-button {
+    background-color: #E67E22; 
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #D35400;  
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+        align-items: center;
+    }
+
+    .navbar .nav-links a {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+
+    .cta-button {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .logo img {
+        max-height: 40px;
+    }
+
+    .navbar .nav-links a {
+        font-size: 16px;
+    }
+}
+
+/* Hero Section */
+.hero-container {
+    background-image: url('https://png.pngtree.com/background/20210716/original/pngtree-blue-circuits-digital-technology-background-picture-image_1404851.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    color: rgb(2, 25, 39);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 20px;
+   
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+color: #f9f9f9;
+}
+
+.hero-button {
+    background-color: #ff9900;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+}/* About Us Section */
+.about-us {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+/* Flex layout for desktop (image left, text right) */
+.about-intro, .about-mission, .about-story {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.about-intro img, .about-mission img, .about-story img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.about-text, .mission-text, .story-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-intro h2, .about-mission h3, .about-story h3 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-intro p, .about-mission p, .about-story p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Leadership Team */
+.about-team {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.team-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.team-bio h4 {
+    margin: 5px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.team-bio p {
+    font-size: 1em;
+    color: #777;
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+    .about-intro, .about-mission, .about-story {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-intro img, .about-mission img, .about-story img {
+        margin: 20px 0;
+        max-width: 100%;
+    }
+
+    .about-intro h2, .about-mission h3, .about-story h3 {
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .team-member {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-img {
+        margin-bottom: 15px;
+    }
+
+    .team-bio h4 {
+        text-align: center;
+    }
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.footer-links, .footer-contact, .footer-social {
+    width: 25%;
+    padding: 10px;
+}
+
+.footer-links h4, .footer-contact h4, .footer-social h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-links ul, .footer-social ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li, .footer-social ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a, .footer-social ul li a {
+    color: #f8f8f8;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover, .footer-social ul li a:hover {
+    color: #ff5722;
+}
+
+.footer-contact p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.footer-contact a {
+    color: #f8f8f8;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    color: #ff5722;
+}
+
+.footer-social ul li a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-social ul li a img:hover {
+    opacity: 0.8;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+}
+.footer .footer-social ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.footer .footer-social ul li {
+    display: inline-block;
+}
+
+.footer .footer-social ul li a {
+    text-decoration: none;
+}
+
+.footer .footer-social .social-icon {
+    width: 30px;
+    height: 30px;
+}
+
+
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo, .footer-links, .footer-contact, .footer-social {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-social ul {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .footer-social ul li a img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+        padding-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-links ul li a, .footer-social ul li a {
+        font-size: 0.9rem;
+    }
+
+    .footer-logo img {
+        max-width: 120px;
+    }
+
+    .footer-social ul li a img {
+        width: 28px;
+        height: 28px;
+    }
+}
+    </style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/Work-Horse.png" alt="Logo"> 
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+        
+        <a href="contactus.html" class="cta-button">Get Started</a>
+    </nav>
+
+<!-- Hero Section -->
+<section class="hero-container">
+    <div class="hero-content">
+        <h1>Welcome to Workhorse Private Limited</h1>
+        <p style="color: #f9f9f9;">We are committed to providing tailored staffing and consulting solutions to help your business grow.</p>
+        <a href="contactus.html" class="hero-button">Get in Touch</a>
+    </div>
+</section><section class="about-us">
+    <div class="container">
+        <!-- About Intro Section -->
+        <div class="about-intro">
+            <img src="https://thumbs.dreamstime.com/b/add-to-cart-internet-web-store-buy-online-e-commerce-concept-153472985.jpg" alt="About Workhorse" class="about-img">
+            <div class="about-text">
+                <h2>About Workhorse Private Limited</h2>
+                <p>At Workhorse Private Limited, we are committed to delivering tailored staffing and consulting solutions to help businesses scale efficiently. Our mission is to connect businesses with the right talent to foster growth and innovation, enabling them to thrive in today's competitive market.</p>
+            </div>
+        </div>
+
+        <!-- About Mission Section -->
+        <div class="about-mission">
+            <img src="https://t3.ftcdn.net/jpg/05/23/63/38/360_F_523633866_Hm1H8jiHUuvHEwEvZKsC9jZwLEYdM3Bz.jpg" alt="Our Mission" class="mission-img">
+            <div class="mission-text">
+                <h3>Our Mission</h3>
+                <p>We aim to connect businesses with the right talent to drive growth and innovation. Our dedicated team works tirelessly to provide personalized solutions to meet the evolving needs of each client.</p>
+            </div>
+        </div>
+
+        <!-- About Story Section -->
+        <div class="about-story">
+            <img src="https://img.freepik.com/premium-vector/medical-appointment-test-results-analyzes-concept-vector-illustration_143808-666.jpg?semt=ais_hybrid" alt="Our Story" class="story-img">
+            <div class="story-text">
+                <h3>Our Story</h3>
+                <p>Founded in 2010, Workhorse Private Limited began with a vision to revolutionize the staffing and consulting industry. Our founders, with years of experience in both corporate and recruitment sectors, saw the gap between businesses’ needs and available talent. With a focus on personalized service and deep industry knowledge, we provide strategic solutions to help organizations grow and succeed.</p>
+            </div>
+        </div>
+
+        <!-- Leadership Team Section -->
+        <div class="about-team">
+            <h3>Meet Our Leadership Team</h3>
+            <div class="team-member">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5t-eM7EK7IYbNEYB1kSTGK_9mqp38BClqMi0OofchRECSiI2AK1L0jJ9VJUwGRXQSXck&usqp=CAU" alt="John Doe" class="team-img">
+                <div class="team-bio">
+                    <h4>John Doe</h4>
+                    <p>CEO & Founder</p>
+                    <p>John has over 20 years of experience in talent acquisition and workforce strategy. As the CEO, he is passionate about driving innovation in recruitment and delivering solutions that meet the needs of clients and candidates alike.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAe42kNVrJSuhw--nba-nyw_mXOpDZdIzybkXswUrhSiBCS1K6iQqPY0_kX2yJja7vsdo&usqp=CAU" alt="Jane Smith" class="team-img">
+                <div class="team-bio">
+                    <h4>Jane Smith</h4>
+                    <p>COO</p>
+                    <p>With a background in human resources and operations, Jane leads our day-to-day operations, ensuring that our services are delivered with the highest level of quality and efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <a href="index.html"><img src="images/Work-Horse.png" alt="WorkHorse Logo" class="footer-logo-img"></a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <!-- <li><a href="#industries">Industries</a></li> -->
+                    <li><a href="contactus.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>1234 Street Name, City, State, 56789</p>
+                <p>Phone: +1 234 567 8901</p>
+                <p>Email: <a href="mailto:info@workhorse.com">info@workhorse.com</a></p>
+            </div>
+
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAgVBMVEUAAAAQcP8IZf8IZ/8JZv8HZf8IZv8IZv8IaP8JZ/8HZv8IZv8FZf8YcP9FjP+TvP/g7P/////R4/9Vlf8QYP+Es/9kn/8IZv8nef8JZf8AYP/v9f/Q4v/B2P9GjP8HZv+yz//Q4/83g/8HZv/g6/+Dsv8HZf/n7//////////e6//ZLyHjAAAAK3RSTlMAEGCfz+//XyCQj98w/////////xD//6D/kBD/////7////8///5Cgz+/vONkvXQAAAPJJREFUeAF9kkUCwzAMBGVSGMrM3P//rxBaB+e6s0YREFJpw2y0cgS1cT3DQLmNWPjcwK/XA24RWIuEdg4j7OtHUX0NYedxko5+jCeZMc0En8FsVDDHSd1WDoFdIlogX46awopozWA+ythsd7s9ZxymJBkcs3wcMZC0YHDKhDNbKLowuGYC21zINIWUbQ7EwwJT7YogqgTTKaTY4tIp7HDIRadwwzVlKVyv11HG9cekFBxam8FbTInuQ4LCd3cL2Uzd+4UV/VkHfUIgMLRdQuBi7JsCxh5rQEAfrO9NYSWojruwBOOhDoR8PF+j0fuipNX+AmbCIviMIiwCAAAAAElFTkSuQmCC" alt="Facebook" class="social-icon"></a></li>
+                    <li><a href="#" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" alt="LinkedIn" class="social-icon"></a></li>
+                    <li><a href="#" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAA/0lEQVR4AbXPIazCMACE4d+L2qoZFEGSIGcRc/gJJB5XMzGJmK9EN0HMi+qaibkKVF1txdQe4g0YzPK5yyWXHL9TaPNQ89LojH87N1rbJcXkMF4Fk31UMrf34hm14KUeoQxGArALHTMuQD2cAWQfJXOpgTbksGr9ng8qluShJTPhyCdx63POg7rEim95ZyR68I1ggQpnCEGwyPicw6hZtPEGmnhkycqOio1zm6XuFtyw5XDXfGvuau0dXHzJp8pfBPuhIXO9ZK5ILUCdSvLYMpc6ASBtl3EaC97I4KaFaOCaBE9Zn5jUsVqR2vcTJZO1DdbGoZryVp94Ka/mQfE7f2T3df0WBhLDAAAAAElFTkSuQmCC" alt="Twitter" class="social-icon"></a></li>
+                    <li><a href="#" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAABWVBMVEVyHVFHcEx0Fvp8Fv1yFP1/FfyLCOyfBOmtAeS7AuDHAd3UANjZAs7rD6xyFvzjANTqAMHoA7l2F/yPFfx8GPmfD/zFF/XVWujoZuLyZt3pRt/yGdHyA8j1AKTViPj/9Pr////8g9f9A7r3DZz5vO794Pf+ruj9B6uzFPv7JLv+AJr+BI/+YMP/1vD+AIThG+n9GZn/vd3/YZz+AXP+GoT/r8r+AmT/b5z+HHH+I3f+G2P/ur7+FFD+Klb+fYv/wcr+LUf+LWX+AFn+Nzr+Ohz+RT7+inP+Si7/ztD+TxL/zbv+Wy//9fH+WgL+c1X+ZyX+PUv+Bzv+VXD+cxr/6eL+aQT+eAX+nDj+gwD+gxH+fSL+rYn+jwD+iwL+XhX/3rn/1bH9ZR/+lwP+nwH+xHH8ZC3+qAH+sAD+wAP+x1P+zGb+pl79mQn+uAD9J3T+ygD9O1n8pRL9twuaEkMNAAAAc3RSTlMBAF3G///////////GW9j//9nY/1r///////////7//////8b/////////////////////////////////////////////////////////////////////////////////xf///1v////////Y/9j/2VzGSus+GgAAAeNJREFUeAFFjEWiU0EQRc/tqu74V9wZ4TBiB6wG3wpzVoQ7zHCXeELypHH+KVchJAESaEs0IUv0Zv+7fwLgSAOk9ZFghcnfDw4AAg18cyhWCKNVob9NCZjQLWVrEGhJbJGDoCBpMwCrJTETAKBWgdeRGb4dmJW56PdI/KU1K4X15N+AFsW0+3/WVm7Pa0Pmu4Fh7HcbRIjMIhr3FItUGAH4SNZKjK32YjKpK3Iv0yUY0b8g0Vs0oK+8wbeyMBAQwVeo44R1z7XWq6rqpn5jiTmAeQO3iceg9zkYzKvc71iEmMFbqCJJ4tDcKFrLjX5D/MEdq8GpIUUgd/tgGboTgiUDPDZ44SXNpr0gWRcAgqEmEPJRNVPOxYaOth0oAHdCxWoOzslH+RCvlafYMgFUHvAIHoCjz16io80BrH/j0AAcJ9KWKkhn5sRyGjsDtr/sqyrsWNO1cW9/cDNLZgHLSzVvn+wMq9qbKKwy7TiIaKTW56pzW6Oa+N1OKEQdvvl2RyOE4DEOZurd1cHNeab27tyjOPfhFlucXP04ovF97B6jTOzdJwFLaNAff7N6c8incH1VpiSR67q2VgjzUU7JgbMTiQtFKmgAsCAuczlflmVZn7iGBFc1awB/p4tqUS3LDb8OPwBrSrZIO/KHZwAAAABJRU5ErkJggg==" alt="Instagram" class="social-icon"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 WorkHorse. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
