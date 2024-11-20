@@ -19,20 +19,21 @@ body {
 }
 
 .navbar .logo img {
-    max-height: 50px;
-    width: auto;
+    max-height: 80px;
+    width: 300px;
 }
 
 .navbar .nav-links {
     list-style: none;
     display: flex;
     gap: 30px;
-    right: 900px;
+   position: relative;right: 20px;
     
 }
 
 .navbar .nav-links li {
     display: inline;
+    
     
 }
 
@@ -42,6 +43,7 @@ body {
     font-size: 16px;
     transition: color 0.3s;
     position: relative;left: 20px;
+    
 }
 
 .navbar .nav-links a:hover {
@@ -210,7 +212,7 @@ body {
     font-size: 36px;
     margin-bottom: 20px;
     color: #333;
-    text-align: left;
+    text-align: center;
 }
 
 .about-text p {
@@ -222,6 +224,7 @@ body {
 }
 
 .about-btn {
+    
     display: inline-block;
     margin-top: 20px;
     padding: 12px 30px;
@@ -315,6 +318,7 @@ p {
 }
 
 .service-card h3 {
+    
     font-size: 1.6rem;
     margin-top: 15px;
 }
@@ -334,6 +338,7 @@ p {
 }
 
 .cta-button {
+    position: relative;top: 20px;
     display: inline-block;
     background-color: #007bff;
     color: white;
@@ -371,6 +376,7 @@ p {
 }
 
 .industries h2 {
+    position: relative;bottom: 60px;
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -378,6 +384,7 @@ p {
 }
 
 .industries p {
+    position: relative;bottom: 30px;
     text-align: center;
     font-size: 1.1rem;
     margin-bottom: 40px;
@@ -453,7 +460,7 @@ p {
     }
 }
 .cta {
-    background-color: #007bff;  
+    background-color: #283646;  
     color: #fff;                
     padding: 60px 0;
     text-align: center;
@@ -618,7 +625,7 @@ p {
     }
 }
 .cta-section {
-    background-color: #007bff; 
+    background-color: #36495e; 
     color: white;
     padding: 60px 20px;
     text-align: center;

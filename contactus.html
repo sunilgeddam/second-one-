@@ -8,6 +8,96 @@
     <style>
         
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2C3E50;  
+    padding: 15px 30px;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar .logo img {
+    max-height: 80px;
+    width: 300px;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+   
+    
+}
+
+.navbar .nav-links li {
+    display: inline;
+    
+    
+}
+
+.navbar .nav-links a {
+    color: #ECF0F1; 
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+    position: relative;left: 20px;
+    
+}
+
+.navbar .nav-links a:hover {
+    color: #E67E22; 
+}
+
+.cta-button {
+    background-color: #E67E22; 
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #D35400;  
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+        align-items: center;
+    }
+
+    .navbar .nav-links a {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+
+    .cta-button {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .logo img {
+        max-height: 40px;
+    }
+
+    .navbar .nav-links a {
+        font-size: 16px;
+    }
+}
+
 .contact-section {
     background-color: #fff;
     padding: 60px 0;
@@ -249,7 +339,7 @@
             <li><a href="contactus.html">Contact</a></li>
         </ul>
         
-        <a href="contactus.html" class="cta-button">Get Started</a>
+        <!-- <a href="contactus.html" class="cta-button">Get Started</a> -->
     </nav>
 
   
