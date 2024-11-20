@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<style>
+    /* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://png.pngtree.com/background/20210710/original/pngtree-blue-cool-tech-smart-city-background-picture-image_977033.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5); /* Transparent background for readability */
+  border-radius: 8px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ff7b00;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #e66d00;
+}
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
+.why-choose-us .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.why-choose-us h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.why-choose-us p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.values {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Added to wrap the values to the next line if necessary */
+}
+
+.value {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%; /* Each value card takes 30% width by default */
+  text-align: center;
+  margin-bottom: 20px; /* Adds space between rows on mobile */
+  transition: transform 0.3s ease;
+}
+
+.value h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.value p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.value:hover {
+  transform: translateY(-5px);
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ff7b00;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+  margin-top: 30px;
+}
+
+.cta-btn:hover {
+  background-color: #e66d00;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .why-choose-us h2 {
+    font-size: 2rem; /* Slightly smaller heading on mobile */
+  }
+
+  .why-choose-us p {
+    font-size: 1rem; /* Smaller paragraph text */
+  }
+
+  .values {
+    flex-direction: column; /* Stack the values vertically on mobile */
+    align-items: center; /* Center the values */
+  }
+
+  .value {
+    width: 100%; /* Each value takes full width */
+    margin-bottom: 20px; /* Add space between cards */
+  }
+  
+  .cta-btn {
+    width: 100%; /* Make the CTA button take full width */
+    text-align: center;
+  }
+}
+
+/* Extra Small Screens (Mobile Portrait) */
+@media (max-width: 480px) {
+  .why-choose-us h2 {
+    font-size: 1.8rem; /* Smaller heading */
+  }
+
+  .why-choose-us p {
+    font-size: 0.9rem; /* Smaller paragraph text */
+  }
+
+  .cta-btn {
+    font-size: 0.9rem; /* Smaller button text on very small screens */
+  }
+}
+
+</style>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/Work-Horse.png" alt="Logo"> 
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+        
+        
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+          <h1>Transforming Industries with Expert Staffing & Consulting</h1>
+          <p>We specialize in connecting businesses with top talent and providing expert consulting to drive success in your industry.</p>
+          <a href="#contact" class="cta-btn">Get Started</a>
+        </div>
+      </section>
+
+
+      <section class="industries">
+        <div class="container">
+            <h2>Industries We Serve</h2>
+            <p>We specialize in providing tailored staffing solutions to various industries. Here’s a look at some of the key sectors where we make a significant impact.</p>
+            <div class="industry-cards">
+                <div class="industry-card" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK6ZEpUCas4QqhK9DiLhlJXxayezqqxKuYTrLG0UacRyN84IY4EJ4nR9ZFp1PRWplhKNU&usqp=CAU');">
+                    <div class="industry-card-content">
+                        <h3>Healthcare</h3>
+                        <p style="position: relative;top: 5px;" >Connecting healthcare professionals with organizations to improve patient care and operations.</p>
+                    </div>
+                </div>
+    
+                <div class="industry-card" style="background-image: url('https://bsmedia.business-standard.com/_media/bs/img/article/2024-07/07/full/1720369883-1424.jpg?im=FeatureCrop,size=(826,465)');">
+                    <div class="industry-card-content">
+                        <h3>IT & Tech</h3>
+                        <p style="position: relative;top: 5px;" >Specialized tech staffing for software development, IT infrastructure, and cybersecurity.</p>
+                    </div>
+                </div>
+    
+                <div class="industry-card" style="background-image: url('https://media.istockphoto.com/id/543558426/photo/financial-data-on-a-monitor-stock-market-data.jpg?s=1024x1024&w=is&k=20&c=ZTlJuVdQO36GLvP4tFWcuRXP8RjBQjey3dM2WPpWHWg=');">
+                    <div class="industry-card-content">
+                        <h3>Finance</h3>
+                        <p style="position: relative;top: 5px;" >Providing financial experts for accounting, investment, and analysis roles in the finance sector.</p>
+                    </div>
+                </div>
+    
+                
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <div class="container">
+          <h2>Why Choose Us?</h2>
+          <p>Our staffing and consulting services are designed to align with your business objectives, delivering the best results for your industry.</p>
+          <div class="values">
+            <div class="value">
+              <h3>Expertise</h3>
+              <p>With years of experience, we provide industry-specific knowledge and resources to solve your toughest challenges.</p>
+            </div>
+            <div class="value">
+              <h3>Quality Talent</h3>
+              <p>We connect you with top-tier candidates that match your needs and culture, ensuring long-term success.</p>
+            </div>
+            <div class="value">
+              <h3>Customized Solutions</h3>
+              <p>We tailor our services to meet the unique demands of your business, providing flexible and scalable solutions.</p>
+            </div>
+          </div>
+          <a href="#contact" class="cta-btn">Contact Us</a>
+        </div>
+      </section>    
+
+
+      <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <a href="index.html"><img src="images/Work-Horse.png" alt="WorkHorse Logo" class="footer-logo-img"></a>
+                </div>
+    
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <!-- <li><a href="#industries">Industries</a></li> -->
+                        <li><a href="contactus.html">Contact</a></li>
+                        
+                        <!-- <li><a href="#privacy-policy">Privacy Policy</a></li> -->
+                        <!-- <li><a href="#terms-of-service">Terms of Service</a></li> -->
+                    </ul>
+                </div>
+    
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>1234 Street Name, City, State, 56789</p>
+                    <p>Phone: +1 234 567 8901</p>
+                    <p>Email: <a href="mailto:info@workhorse.com">info@workhorse.com</a></p>
+                </div>
+    
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAgVBMVEUAAAAQcP8IZf8IZ/8JZv8HZf8IZv8IZv8IaP8JZ/8HZv8IZv8FZf8YcP9FjP+TvP/g7P/////R4/9Vlf8QYP+Es/9kn/8IZv8nef8JZf8AYP/v9f/Q4v/B2P9GjP8HZv+yz//Q4/83g/8HZv/g6/+Dsv8HZf/n7//////////e6//ZLyHjAAAAK3RSTlMAEGCfz+//XyCQj98w/////////xD//6D/kBD/////7////8///5Cgz+/vONkvXQAAAPJJREFUeAF9kkUCwzAMBGVSGMrM3P//rxBaB+e6s0YREFJpw2y0cgS1cT3DQLmNWPjcwK/XA24RWIuEdg4j7OtHUX0NYedxko5+jCeZMc0En8FsVDDHSd1WDoFdIlogX46awopozWA+ythsd7s9ZxymJBkcs3wcMZC0YHDKhDNbKLowuGYC21zINIWUbQ7EwwJT7YogqgTTKaTY4tIp7HDIRadwwzVlKVyv11HG9cekFBxam8FbTInuQ4LCd3cL2Uzd+4UV/VkHfUIgMLRdQuBi7JsCxh5rQEAfrO9NYSWojruwBOOhDoR8PF+j0fuipNX+AmbCIviMIiwCAAAAAElFTkSuQmCC" alt="Facebook" class="social-icon"></a></li>
+                        <li><a href="#" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" alt="LinkedIn" class="social-icon"></a></li>
+                        <li><a href="#" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAA/0lEQVR4AbXPIazCMACE4d+L2qoZFEGSIGcRc/gJJB5XMzGJmK9EN0HMi+qaibkKVF1txdQe4g0YzPK5yyWXHL9TaPNQ89LojH87N1rbJcXkMF4Fk31UMrf34hm14KUeoQxGArALHTMuQD2cAWQfJXOpgTbksGr9ng8qluShJTPhyCdx63POg7rEim95ZyR68I1ggQpnCEGwyPicw6hZtPEGmnhkycqOio1zm6XuFtyw5XDXfGvuau0dXHzJp8pfBPuhIXO9ZK5ILUCdSvLYMpc6ASBtl3EaC97I4KaFaOCaBE9Zn5jUsVqR2vcTJZO1DdbGoZryVp94Ka/mQfE7f2T3df0WBhLDAAAAAElFTkSuQmCC" alt="Twitter" class="social-icon"></a></li>
+                        <li><a href="#" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAABWVBMVEVyHVFHcEx0Fvp8Fv1yFP1/FfyLCOyfBOmtAeS7AuDHAd3UANjZAs7rD6xyFvzjANTqAMHoA7l2F/yPFfx8GPmfD/zFF/XVWujoZuLyZt3pRt/yGdHyA8j1AKTViPj/9Pr////8g9f9A7r3DZz5vO794Pf+ruj9B6uzFPv7JLv+AJr+BI/+YMP/1vD+AIThG+n9GZn/vd3/YZz+AXP+GoT/r8r+AmT/b5z+HHH+I3f+G2P/ur7+FFD+Klb+fYv/wcr+LUf+LWX+AFn+Nzr+Ohz+RT7+inP+Si7/ztD+TxL/zbv+Wy//9fH+WgL+c1X+ZyX+PUv+Bzv+VXD+cxr/6eL+aQT+eAX+nDj+gwD+gxH+fSL+rYn+jwD+iwL+XhX/3rn/1bH9ZR/+lwP+nwH+xHH8ZC3+qAH+sAD+wAP+x1P+zGb+pl79mQn+uAD9J3T+ygD9O1n8pRL9twuaEkMNAAAAc3RSTlMBAF3G///////////GW9j//9nY/1r///////////7//////8b/////////////////////////////////////////////////////////////////////////////////xf///1v////////Y/9j/2VzGSus+GgAAAeNJREFUeAFFjEWiU0EQRc/tqu74V9wZ4TBiB6wG3wpzVoQ7zHCXeELypHH+KVchJAESaEs0IUv0Zv+7fwLgSAOk9ZFghcnfDw4AAg18cyhWCKNVob9NCZjQLWVrEGhJbJGDoCBpMwCrJTETAKBWgdeRGb4dmJW56PdI/KU1K4X15N+AFsW0+3/WVm7Pa0Pmu4Fh7HcbRIjMIhr3FItUGAH4SNZKjK32YjKpK3Iv0yUY0b8g0Vs0oK+8wbeyMBAQwVeo44R1z7XWq6rqpn5jiTmAeQO3iceg9zkYzKvc71iEmMFbqCJJ4tDcKFrLjX5D/MEdq8GpIUUgd/tgGboTgiUDPDZ44SXNpr0gWRcAgqEmEPJRNVPOxYaOth0oAHdCxWoOzslH+RCvlafYMgFUHvAIHoCjz16io80BrH/j0AAcJ9KWKkhn5sRyGjsDtr/sqyrsWNO1cW9/cDNLZgHLSzVvn+wMq9qbKKwy7TiIaKTW56pzW6Oa+N1OKEQdvvl2RyOE4DEOZurd1cHNeab27tyjOPfhFlucXP04ovF97B6jTOzdJwFLaNAff7N6c8incH1VpiSR67q2VgjzUU7JgbMTiQtFKmgAsCAuczlflmVZn7iGBFc1awB/p4tqUS3LDb8OPwBrSrZIO/KHZwAAAABJRU5ErkJggg==" alt="Instagram" class="social-icon"></a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>&copy; 2024 WorkHorse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+</body>
+</html>
