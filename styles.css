@@ -8,6 +8,41 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.card-img-top1 {
+    height: 100px;
+    width: 100px;
+    margin-left: 125px;
+    padding: 5px;
+}
+
+.btn-signin {
+    color: #fff;
+    background-color: #3abfe7;
+    /* Blue background */
+    border-radius: 30px;
+    /* Rounded corners */
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    margin-left: 25px;
+}
+
+.btn-signin:hover {
+    background-color: #8ab4e1;
+    /* Darker blue on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+}
+
+.btn-signin:focus,
+.btn-signin:active {
+    background-color: #00408d;
+    /* Even darker blue when clicked */
+    outline: none;
+    /* Remove outline when button is clicked */
+}
+/* 
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -96,7 +131,7 @@ body {
     .navbar .nav-links a {
         font-size: 16px;
     }
-}
+} */
 .hero {
     position: relative;
     background-image: url('https://media.licdn.com/dms/image/v2/C5112AQHNCEAzJbFymg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1520166512426?e=2147483647&v=beta&t=b3JNe9Em3Uhm87R2PkldaFU8WMg-rYfeLZSMCN3SWkw'); /* Replace with your actual image */
