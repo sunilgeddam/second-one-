@@ -132,6 +132,14 @@ body {
         font-size: 16px;
     }
 } */
+.logout-btn {
+    background-color: #e74c3c; /* Red background for logout */
+    color: white;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
 .hero {
     position: relative;
     background-image: url('https://media.licdn.com/dms/image/v2/C5112AQHNCEAzJbFymg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1520166512426?e=2147483647&v=beta&t=b3JNe9Em3Uhm87R2PkldaFU8WMg-rYfeLZSMCN3SWkw'); /* Replace with your actual image */

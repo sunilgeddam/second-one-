@@ -207,54 +207,58 @@ body {
 
 </style>
 <body>
+ 
   <nav class="navbar navbar-expand-lg" style="background-color: #037782;">
+    <div class="container-fluid">
+        <a href="index.php">
+            <img style="height: 80px; width: 230px;" src="images/Work-Horse.png" alt="Logo">
+        </a>
+        <!-- Keep navbar always expanded -->
+        <div style="position: relative;top: 7px;" class="ms-auto">
+            <ul class="navbar-nav">
+                <li class="nav-item me-3">
+                    <a class="nav-link text-white" href="index.php">Home</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link text-white" href="services.html">Services</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link text-white" href="industries.html">Industries</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link text-white" href="contactus.html">Contact Us</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link text-white" href="aboutus.html">About Us</a>
+                </li>
+                <!-- Profile Section with Dropdown -->
+                <li style="position: relative;bottom:6px;" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img  src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
+                        <!-- <span>Profile</span> -->
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="viewprofile.php">View Profile</a></li>
+                        <!-- <li><a class="dropdown-item" href="settings.php">Settings</a></li> -->
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-      <div class="container-fluid">
-          <a href="index.html">
-              <img style="height: 80px;width: 230px;" src="images/Work-Horse.png" alt="Logo"> 
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                  <li class="nav-item me-3">
-                      <a class="nav-link text-white" aria-current="page" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item me-3">
-                      <a class="nav-link text-white" href="aboutus.html">Services</a>
-                  </li>
-                  <li class="nav-item me-3">
-                      <a class="nav-link text-white" href="aboutus.html">Industries</a>
-                  </li><li class="nav-item me-3">
-                      <a class="nav-link text-white" href="aboutus.html">About Us</a>
-                  </li>
-                  <!-- <li class="nav-item me-3">
-                      <a class="nav-link text-white" href="#">Contact Us</a>
-                  </li> -->
-                  <!-- <li class="nav-item dropdown me-3">
-                      <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          Explore Our Solutions
-                      </a> -->
-                      <!-- <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="services.html">Services</a></li>
-                          <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                          <li><a class="dropdown-item" href="#">Talk To Our Expert</a></li>
-                      </ul> -->
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link text-white" href="contactus.html">Contact Us</a>
-                  </li>
-                  <li class="nav-item">
-                      <!-- <a class="btn btn-signin" href="#">Sign In</a> -->
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </nav>
-  
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
     <section class="hero">
         <div class="hero-content">
           <h1>Transforming Industries with Expert Staffing & Consulting</h1>
@@ -336,13 +340,13 @@ body {
         <div class="container">
             <div class="footer-top">
                 <div class="footer-logo">
-                    <a href="index.html"><img src="images/Work-Horse.png" alt="WorkHorse Logo" class="footer-logo-img"></a>
+                    <a href="index.php"><img src="images/Work-Horse.png" alt="WorkHorse Logo" class="footer-logo-img"></a>
                 </div>
     
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li><a href="aboutus.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="industries.html">Industries</a></li>
